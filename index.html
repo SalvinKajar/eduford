@@ -26,9 +26,10 @@
         </nav>
 
     <div class="text-box">
-        <h1>India's Prestigious college</h1>
+        <h1>India's Prestigious Educational Blog</h1>
         <p>This is VJTI we exist from very long time. We have great acadmecs
-            and great placement record </p>
+            and great placement record. <br>This blog is created by VJTI students to help other students by posting easy expla
+        tion on complex topics from computer science. </p>
         <a href="" class="hero-btn">Visit Us to know More</a>
     </div>
     </section>
@@ -36,33 +37,34 @@
 
 <section class="course">
 
-    <h1>Courses We Offer</h1>
+    <h1>Educational Blogs</h1>
 
-    <p>courses we Offer</p>
 
-    <button onclick="addsection()">Add section</button>
+    
+    <div class="blog">
+        <h3>Title of the Blog</h3>
+        <input type="text" class="title" id="heading"placeholder="">
+        <h3>Main content of the blog</h3>
+        <input type="text" class="content" id="content" placeholder="">
+        <input type="file" id="image-input" accept="image/png,image/jpg">
+        <button class="hero-btn" onclick="addsection()">Post</button>
+    </div>
+    
     <div class="row" id="row">
         <div class="course-col">
-            <h3>Intermediate</h3>
+
+            <img src="/eduford/eduford_img/user1.jpg" alt="">
+            <div class="container">
+                <h3>Intermediate</h3>
             <p>asdkjn ajknvnaknjsfovm anakndflnsfsanla 
                 alfksnldsknfklnds asnfklnasd;lfsd;
                 nsalkfnjksandflsnkdflnd sldakfnds
             </p>
+            </div>
+
+            
         </div>
-        <div class="course-col">
-            <h3>Degree</h3>
-            <p>asdkjn ajknvnaknjsfovm anakndflnsfsanla 
-                alfksnldsknfklnds asnfklnasd;lfsd;
-                nsalkfnjksandflsnkdflnd sldakfnds
-            </p>
-        </div>
-        <div class="course-col">
-            <h3>Post graduate</h3>
-            <p>asdkjn ajknvnaknjsfovm anakndflnsfsanla 
-                alfksnldsknfklnds asnfklnasd;lfsd;
-                nsalkfnjksandflsnkdflnd sldakfnds
-            </p>
-        </div>
+        
         
     </div>
 
@@ -102,6 +104,10 @@
 
 </section>
 
+<!-- <section>
+    <input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg">
+<div id="display-image"></div>
+</section> -->
 
 
 </body>
@@ -123,20 +129,40 @@
 
         const child= document.createElement("div");
         
-        child.classList.add("course-col")
         
+        child.classList.add("course-col")
+
+        var container=document.createElement('div');
+
+        container.classList.add("container")
         var h1 = document.createElement('h3');
-        h1.appendChild(document.createTextNode("hiee"));
+        h1.appendChild(document.createTextNode(heading.value));
         var p = document.createElement('p');
-        p.appendChild(document.createTextNode("this works successfully as expecteed hurrayyyy"))
-        child.appendChild(h1);
-        child.append(p);
+        p.appendChild(document.createTextNode(content.value));
+        container.appendChild(h1);
+        container.append(p);
+        var img = document.createElement("img");
+        
+        img.src = uploaded_image;
+        child.appendChild(img);
+        child.appendChild(container);
+
         parent.appendChild(child);
         
 
 
 
     }
+var uploaded_image="";
+    const image_input = document.querySelector("#image-input");
+image_input.addEventListener("change", function() {
+  const reader = new FileReader();
+  reader.addEventListener("load", () => {
+    uploaded_image = reader.result;
+  
+  });
+  reader.readAsDataURL(this.files[0]);
+});
 
 
 
