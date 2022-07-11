@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VJTI Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
+</head>
+<body>
+    <section class="header"> 
+        <nav>
+            <a href="index.html"> <img src="eduford_img/logo.png" alt=""></a>
+        
+            <div class="nav-links" id="navlinks">
+                <i class="fa fa-times" onclick="hidemenu()"></i>
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="">COURSE</a></li>
+                    <li><a href="">BLOG</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul> 
+            </div> 
+            <i class="fa fa-bars onclick=" id="navl" onclick="showmenu()" ></i> 
+        
+        </nav>
+
+    <div class="text-box">
+        <h1>India's Prestigious college</h1>
+        <p>This is VJTI we exist from very long time. We have great acadmecs
+            and great placement record </p>
+        <a href="" class="hero-btn">Visit Us to know More</a>
+    </div>
+    </section>
+
+
+<section class="course">
+
+    <h1>Courses We Offer</h1>
+
+    <p>courses we Offer</p>
+
+    <button onclick="addsection()">Add section</button>
+    <div class="row" id="row">
+        <div class="course-col">
+            <h3>Intermediate</h3>
+            <p>asdkjn ajknvnaknjsfovm anakndflnsfsanla 
+                alfksnldsknfklnds asnfklnasd;lfsd;
+                nsalkfnjksandflsnkdflnd sldakfnds
+            </p>
+        </div>
+        <div class="course-col">
+            <h3>Degree</h3>
+            <p>asdkjn ajknvnaknjsfovm anakndflnsfsanla 
+                alfksnldsknfklnds asnfklnasd;lfsd;
+                nsalkfnjksandflsnkdflnd sldakfnds
+            </p>
+        </div>
+        <div class="course-col">
+            <h3>Post graduate</h3>
+            <p>asdkjn ajknvnaknjsfovm anakndflnsfsanla 
+                alfksnldsknfklnds asnfklnasd;lfsd;
+                nsalkfnjksandflsnkdflnd sldakfnds
+            </p>
+        </div>
+        
+    </div>
+
+
+</section>
+
+<section class="campus">
+    <h1> Our Gloabl Campus </h1>
+    <p>asdkjn ajknvnaknjsfovm anakndflnsfsanla 
+        alfksnldsknfklnds asnfklnasd;lfsd;
+        nsalkfnjksandflsnkdflnd sldakfnds
+    </p>
+
+    <div class="row">
+        <div class="campus-col">
+            <img src="/eduford/eduford_img/london.png" alt="">
+            <div class="layer">
+                <h3>London</h3>
+            </div>
+        </div>
+        <div class="campus-col">
+            <img src="/eduford/eduford_img/newyork.png" alt="">
+            <div class="layer">
+                <h3>New York</h3>
+            </div>
+        </div>
+        <div class="campus-col">
+            <img src="/eduford/eduford_img/washington.png" alt="">
+            <div class="layer">
+                <h3>Washington</h3>
+            </div>
+        </div>
+        
+
+      
+    </div>
+
+</section>
+
+
+
+</body>
+<script>
+    var navlinks= document.getElementById("navlinks");
+    function showmenu(){
+        
+        navlinks.style.right=0;
+    }
+
+    function hidemenu(){
+        
+        navlinks.style.right="-200px";
+    }
+
+    function addsection(){
+
+        const parent = document.getElementById("row");
+
+        const child= document.createElement("div");
+        
+        child.classList.add("course-col")
+        
+        var h1 = document.createElement('h3');
+        h1.appendChild(document.createTextNode("hiee"));
+        var p = document.createElement('p');
+        p.appendChild(document.createTextNode("this works successfully as expecteed hurrayyyy"))
+        child.appendChild(h1);
+        child.append(p);
+        parent.appendChild(child);
+        
+
+
+
+    }
+
+
+
+
+</script>
+</html>
